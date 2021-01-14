@@ -1,10 +1,13 @@
 .keypad-button {
     display: flex;
-    background: lightblue;
+    background: gray;
     border-radius: 50%;
     width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Helvetica Neue OTS";
+    font-size: 1.1em;
+    color: white;
   }

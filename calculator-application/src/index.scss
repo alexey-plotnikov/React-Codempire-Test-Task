@@ -13,3 +13,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Myriad Pro Regular";
+  src: local("Myriad Pro Regular"),
+    url(assets/fonts/MyriadPro-Regular.otf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Myriad Pro Cond";
+  src: local("Myriad Pro Cond"),
+    url(assets/fonts/MyriadPro-Cond.otf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue OTS";
+  src: local("Helvetica Neue OTS"),
+    url(assets/fonts/Helvetica-Neue-OTS.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "San Francisco";
+  src: local("San Francisco"),
+    url(assets/fonts/San-Francisco.ttf)
+      format("truetype");
+}

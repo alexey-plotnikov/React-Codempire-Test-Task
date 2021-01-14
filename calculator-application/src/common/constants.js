@@ -1,3 +1,26 @@
 export const KeypadButtonConstants = {
-    FILM_URL: 'https://api.myjson.com/bins/p2dnz'
+  ALL_CLEAR_SIGN: "AC",
+  CLEAR_SIGN: "C",
+  PLUS_MINUS_SIGN: "⁺∕₋",
+  PERCENTAGE_SIGN: "%",
+  DIVISION_SIGN: "÷",
+  TIMES_SIGN: "×",
+  MINUS_SIGN: "-",
+  PLUS_SIGN: "+",
+  EQUALS_SIGN: "=",
+  FLOATING_POINT_SIGN: ",",
+  MEMORY_NUMBER_CLEAR_SIGN: "mc",
+  MEMORY_NUMBER_RECALL_SIGN: "mr",
+  MEMORY_NUMBER_MINUS_SIGN: "m-",
+  MEMORY_NUMBER_PLUS_SIGN: "m+",
+  NUMBER_NINE: "9",
+  NUMBER_EIGHT: "8",
+  NUMBER_SEVEN: "7",
+  NUMBER_SIX: "6",
+  NUMBER_FIVE: "5",
+  NUMBER_FOUR: "4",
+  NUMBER_THREE: "3",
+  NUMBER_TWO: "2",
+  NUMBER_ONE: "1",
+  NUMBER_ZERO: "0"
 };
