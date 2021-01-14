@@ -1,6 +1,5 @@
 .keypad-button {
     display: flex;
-    background: gray;
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -9,5 +8,30 @@
     justify-content: center;
     font-family: "Helvetica Neue OTS";
     font-size: 1.1em;
-    color: white;
+    color: #ffffff;
+    
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  .light-grey-button {
+    background: #a6a6a7;
+  }
+
+  .grey-button {
+    background: #303030;
+  }
+
+  .orange-button {
+    background: #ff9b03;
+  }
+
+  .zero-button-size {
+    margin-right: 10px;
+    width: 100px;
+    padding-left: 18px;
+    background: #303030;
+    border-radius: 25px;
+    justify-content: left;
   }

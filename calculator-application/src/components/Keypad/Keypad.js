@@ -14,28 +14,28 @@ const KeypadComponent = (props) => {
   return (
     <Container className="keypad-container">
       <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+        <Col className="test">
           <KeypadButton
             btnLabel={KeypadButtonConstants.ALL_CLEAR_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.LIGHT_GREY}
           />
         </Col>
-        <Col>
+        <Col className="test">
           <KeypadButton
             btnLabel={KeypadButtonConstants.PLUS_MINUS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.LIGHT_GREY}
           />
         </Col>
-        <Col>
+        <Col className="test">
           <KeypadButton
             btnLabel={KeypadButtonConstants.PERCENTAGE_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.LIGHT_GREY}
           />
         </Col>
-        <Col>
+        <Col className="test">
           <KeypadButton
             btnLabel={KeypadButtonConstants.DIVISION_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
@@ -44,25 +44,25 @@ const KeypadComponent = (props) => {
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_CLEAR_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_RECALL_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_MINUS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_PLUS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
@@ -71,25 +71,25 @@ const KeypadComponent = (props) => {
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_SEVEN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_EIGHT}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_NINE}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.TIMES_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
@@ -98,25 +98,25 @@ const KeypadComponent = (props) => {
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_FOUR}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_FIVE}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_SIX}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.MINUS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
@@ -125,25 +125,25 @@ const KeypadComponent = (props) => {
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_ONE}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_TWO}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_THREE}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.PLUS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
@@ -152,19 +152,19 @@ const KeypadComponent = (props) => {
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_ZERO}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ZERO_BUTTON_SIZE}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.FLOATING_POINT_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.GREY}
           />
         </Col>
         <Col>
           <KeypadButton
             btnLabel={KeypadButtonConstants.EQUALS_SIGN}
-            btnStyle=""
+            btnStyle={KeypadButtonConstants.ORANGE}
           />
         </Col>
       </Row>
