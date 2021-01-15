@@ -1,0 +1,13 @@
+.output-display-container {
+    display: flex;
+    height: 90px;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+    padding-top: 22px;
+    padding-right: 15px;
+    font-family: "Helvetica Neue OTS";
+    color: white;
+    font-size: 3.2em;
+}

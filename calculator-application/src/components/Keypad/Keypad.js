@@ -1,174 +1,193 @@
 import React from "react";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
 import KeypadButton from "components/KeypadButton/KeypadButton";
 import { KeypadButtonConstants } from "common/constants";
 import "./Keypad.scss";
 
 const KeypadComponent = (props) => {
-  const {} = props;
+  const { inputDigit, clearOutputDisplay } = props;
 
   return (
-    <Container className="keypad-container">
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col className="test">
+    <div className="keypad-container">
+      <div className="keypad-container__keypad-row">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.ALL_CLEAR_SIGN}
-            btnStyle={KeypadButtonConstants.LIGHT_GREY}
+            btnColor={KeypadButtonConstants.LIGHT_GREY_COLOR}
+            onClick={() => clearOutputDisplay()}
           />
-        </Col>
-        <Col className="test">
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.PLUS_MINUS_SIGN}
-            btnStyle={KeypadButtonConstants.LIGHT_GREY}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
+            btnColor={KeypadButtonConstants.LIGHT_GREY_COLOR}
           />
-        </Col>
-        <Col className="test">
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.PERCENTAGE_SIGN}
-            btnStyle={KeypadButtonConstants.LIGHT_GREY}
+            btnColor={KeypadButtonConstants.LIGHT_GREY_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-        <Col className="test">
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.DIVISION_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+      <div className="keypad-container__keypad-row no-gutters">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_CLEAR_SIGN}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            btnStyle={KeypadButtonConstants.MEMORY_NUMBER_STYLE}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_RECALL_SIGN}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            btnStyle={KeypadButtonConstants.MEMORY_NUMBER_STYLE}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_MINUS_SIGN}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            btnStyle={KeypadButtonConstants.MEMORY_NUMBER_STYLE}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.MEMORY_NUMBER_PLUS_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.MEMORY_NUMBER_STYLE}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+      <div className="keypad-container__keypad-row no-gutters">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_SEVEN}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_SEVEN)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_EIGHT}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_EIGHT)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_NINE}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_NINE)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.TIMES_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+      <div className="keypad-container__keypad-row no-gutters">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_FOUR}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_FOUR)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_FIVE}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_FIVE)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_SIX}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_SIX)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.MINUS_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+      <div className="keypad-container__keypad-row no-gutters">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_ONE}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_ONE)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_TWO}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_TWO)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_THREE}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_THREE)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.PLUS_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="keypad-container__keypad-row no-gutters">
-        <Col>
+      <div className="keypad-container__keypad-row no-gutters">
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.NUMBER_ZERO}
-            btnStyle={KeypadButtonConstants.ZERO_BUTTON_SIZE}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
+            btnStyle={KeypadButtonConstants.ZERO_STYLE}
+            onClick={() => inputDigit(KeypadButtonConstants.NUMBER_ZERO)}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.FLOATING_POINT_SIGN}
-            btnStyle={KeypadButtonConstants.GREY}
+            btnColor={KeypadButtonConstants.GREY_COLOR}
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadButtonConstants.EQUALS_SIGN}
-            btnStyle={KeypadButtonConstants.ORANGE}
+            btnColor={KeypadButtonConstants.ORANGE_COLOR}
+            btnStyle={KeypadButtonConstants.SIGN_STYLE}
           />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

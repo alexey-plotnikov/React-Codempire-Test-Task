@@ -7,31 +7,45 @@
     align-items: center;
     justify-content: center;
     font-family: "Helvetica Neue OTS";
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #ffffff;
     
     &:hover{
       cursor: pointer;
     }
+
+    &.light-grey-button {
+      background: #a6a6a7;
+    }
+
+    &.grey-button {
+      background: #303030;
+    }
+
+    &.orange-button {
+      background: #ff9b03;
+    }
+
+    &.zero-button {
+      width: 97px;
+      padding-left: 17.5px;
+      background: #303030;
+      border-radius: 25px;
+      justify-content: flex-start;
+    }
+
+    &.sign-button {
+      font-size: 1.4em;
+    }
+
+    &.memory-number-button {
+      font-size: 1em;
+    }
   }
 
-  .light-grey-button {
-    background: #a6a6a7;
-  }
 
-  .grey-button {
-    background: #303030;
-  }
 
-  .orange-button {
-    background: #ff9b03;
-  }
 
-  .zero-button-size {
-    margin-right: 10px;
-    width: 100px;
-    padding-left: 18px;
-    background: #303030;
-    border-radius: 25px;
-    justify-content: left;
-  }
+
+
+

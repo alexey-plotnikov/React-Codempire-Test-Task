@@ -1,6 +1,19 @@
 .keypad-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .keypad-container__keypad-row {
-  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 7px;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.keypad-container__keypad-row__keypad-column {
+  margin-left: 7px;
+  border-radius: 50%;
 }

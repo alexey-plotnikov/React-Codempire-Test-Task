@@ -23,8 +23,10 @@ export const KeypadButtonConstants = {
   NUMBER_TWO: "2",
   NUMBER_ONE: "1",
   NUMBER_ZERO: "0",
-  LIGHT_GREY: "light-grey-button",
-  GREY: "grey-button",
-  ORANGE: "orange-button",
-  ZERO_BUTTON_SIZE: "zero-button-size"
+  SIGN_STYLE: "sign-button",
+  MEMORY_NUMBER_STYLE: "memory-number-button",
+  ZERO_STYLE: "zero-button",
+  LIGHT_GREY_COLOR: "light-grey-button",
+  GREY_COLOR: "grey-button",
+  ORANGE_COLOR: "orange-button",
 };
