@@ -5,7 +5,7 @@ import { KeypadButtonConstants } from "common/constants";
 import "./Keypad.scss";
 
 const KeypadComponent = (props) => {
-  const { inputDigit, clearOutputDisplay } = props;
+  const { inputDigit, clearOutputDisplay, executeCalculation} = props;
 
   return (
     <div className="keypad-container">
@@ -36,6 +36,7 @@ const KeypadComponent = (props) => {
             btnLabel={KeypadButtonConstants.DIVISION_SIGN}
             btnColor={KeypadButtonConstants.ORANGE_COLOR}
             btnStyle={KeypadButtonConstants.SIGN_STYLE}
+            onClick={() => executeCalculation(KeypadButtonConstants.DIVISION_SIGN)}
           />
         </div>
       </div>
@@ -98,6 +99,7 @@ const KeypadComponent = (props) => {
             btnLabel={KeypadButtonConstants.TIMES_SIGN}
             btnColor={KeypadButtonConstants.ORANGE_COLOR}
             btnStyle={KeypadButtonConstants.SIGN_STYLE}
+            onClick={() => executeCalculation(KeypadButtonConstants.TIMES_SIGN)}
           />
         </div>
       </div>
@@ -129,6 +131,7 @@ const KeypadComponent = (props) => {
             btnLabel={KeypadButtonConstants.MINUS_SIGN}
             btnColor={KeypadButtonConstants.ORANGE_COLOR}
             btnStyle={KeypadButtonConstants.SIGN_STYLE}
+            onClick={() => executeCalculation(KeypadButtonConstants.MINUS_SIGN)}
           />
         </div>
       </div>
@@ -160,6 +163,7 @@ const KeypadComponent = (props) => {
             btnLabel={KeypadButtonConstants.PLUS_SIGN}
             btnColor={KeypadButtonConstants.ORANGE_COLOR}
             btnStyle={KeypadButtonConstants.SIGN_STYLE}
+            onClick={() => executeCalculation(KeypadButtonConstants.PLUS_SIGN)}
           />
         </div>
       </div>

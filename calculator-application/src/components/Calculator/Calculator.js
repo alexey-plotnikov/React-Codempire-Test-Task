@@ -6,7 +6,7 @@ import KeypadComponent from "components/Keypad/Keypad";
 import "./Calculator.scss";
 
 const CalculatorComponent = (props) => {
-  const { inputDigit, displayedValue, clearOutputDisplay } = props;
+  const { inputDigit, displayedValue, clearOutputDisplay, executeCalculation } = props;
 
   return (
     <div className="content-component">
@@ -14,6 +14,7 @@ const CalculatorComponent = (props) => {
       <KeypadComponent
         inputDigit={(digit) => inputDigit(digit)}
         clearOutputDisplay={() => clearOutputDisplay()}
+        executeCalculation={(currentOperation) => executeCalculation(currentOperation)}
       />
     </div>
   );
