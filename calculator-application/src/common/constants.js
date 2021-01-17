@@ -1,4 +1,4 @@
-export const KeypadButtonConstants = {
+export const KeypadConstants = {
   ALL_CLEAR_SIGN: "AC",
   CLEAR_SIGN: "C",
   PLUS_MINUS_SIGN: "⁺∕₋",
@@ -8,7 +8,7 @@ export const KeypadButtonConstants = {
   MINUS_SIGN: "-",
   PLUS_SIGN: "+",
   EQUALS_SIGN: "=",
-  FLOATING_POINT_SIGN: ",",
+  FLOATING_POINT_SIGN: ".",
   MEMORY_NUMBER_CLEAR_SIGN: "mc",
   MEMORY_NUMBER_RECALL_SIGN: "mr",
   MEMORY_NUMBER_MINUS_SIGN: "m-",

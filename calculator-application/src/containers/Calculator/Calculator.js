@@ -1,21 +1,22 @@
 import React from "react";
 
 import CalculatorComponent from "components/Calculator/Calculator";
-import { KeypadButtonConstants } from "common/constants";
+import { KeypadConstants } from "common/constants";
 
 class Calculator extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      displayedValue: KeypadButtonConstants.NUMBER_ZERO,
+      displayedValue: KeypadConstants.NUMBER_ZERO,
       value: null,
       operation: null,
+      memoryNumber: KeypadConstants.NUMBER_ZERO,
       isOperationActive: false,
     };
   }
 
-  inputDigit(digit) {
+  handleDigitInput(digit) {
     const { displayedValue, isOperationActive } = this.state;
 
     if (isOperationActive) {
@@ -26,45 +27,110 @@ class Calculator extends React.Component {
     } else {
       this.setState({
         displayedValue:
-          displayedValue === KeypadButtonConstants.NUMBER_ZERO
-            ? String(digit): displayedValue + digit,
+          displayedValue === KeypadConstants.NUMBER_ZERO
+            ? String(digit)
+            : displayedValue + digit,
       });
     }
   }
 
-  clearOutputDisplay() {
+  handleSignChange() {
+    const { displayedValue } = this.state;
+    const result = parseFloat(displayedValue) * -1;
+
     this.setState({
-      displayedValue: KeypadButtonConstants.NUMBER_ZERO,
+      displayedValue: String(result),
     });
+  }
+
+  handleNumberPercentage() {
+    const { displayedValue } = this.state;
+    const nextValue = parseFloat(displayedValue);
+
+    if (nextValue === KeypadConstants.NUMBER_ZERO) {
+      return;
+    } else {
+      const result = parseFloat(displayedValue) / 100;
+
+      this.setState({
+        displayedValue: String(result),
+      });
+    }
+  }
+
+  handleFloatingPointInput() {
+    const { displayedValue } = this.state;
+
+    if (!displayedValue.includes(KeypadConstants.FLOATING_POINT_SIGN)) {
+      this.setState({
+        displayedValue: displayedValue + KeypadConstants.FLOATING_POINT_SIGN,
+        isOperationActive: false,
+      });
+    }
+  }
+
+  handleMemoryNumberOperations(memoryOperation, prevValue, nextValue) {
+    switch (memoryOperation) {
+      case KeypadConstants.MEMORY_NUMBER_RECALL_SIGN: {
+        return prevValue;
+      }
+      case KeypadConstants.MEMORY_NUMBER_PLUS_SIGN: {
+        return prevValue + nextValue;
+      }
+      case KeypadConstants.MEMORY_NUMBER_MINUS_SIGN: {
+        return prevValue - nextValue;
+      }
+      case KeypadConstants.MEMORY_NUMBER_CLEAR_SIGN: {
+        return KeypadConstants.NUMBER_ZERO;
+      }
+    }
+  }
+
+  handleMemoryNumberInput(currentMemoryOperation) {
+    const { displayedValue, memoryNumber } = this.state;
+    const nextValue = parseFloat(displayedValue);
+    const prevValue = parseFloat(memoryNumber);
+
+    const result = this.handleMemoryNumberOperations(
+      currentMemoryOperation,
+      prevValue,
+      nextValue
+    )
+
+    if (currentMemoryOperation === KeypadConstants.MEMORY_NUMBER_RECALL_SIGN) {
+      this.setState({
+        displayedValue: String(result)
+      })
+    }
+
+    this.setState({
+      memoryNumber: String(result)
+    })
+
   }
 
   mathOperations(operation, prevValue, nextValue) {
     switch (operation) {
-      case KeypadButtonConstants.PLUS_SIGN: {
+      case KeypadConstants.PLUS_SIGN: {
         return prevValue + nextValue;
       }
-      case KeypadButtonConstants.MINUS_SIGN: {
+      case KeypadConstants.MINUS_SIGN: {
         return prevValue - nextValue;
       }
-      case KeypadButtonConstants.TIMES_SIGN: {
+      case KeypadConstants.TIMES_SIGN: {
         return prevValue * nextValue;
       }
-      case KeypadButtonConstants.DIVISION_SIGN: {
+      case KeypadConstants.DIVISION_SIGN: {
         return prevValue / nextValue;
       }
-      // case KeypadButtonConstants.PERCENTAGE_SIGN: {
-      //   return prevValue / nextValue;
-      // }
+      case KeypadConstants.EQUALS_SIGN: {
+        return nextValue;
+      }
     }
   }
 
   executeCalculation(currentOperation) {
-    const {
-      displayedValue,
-      value,
-      operation,
-      isOperationActive,
-    } = this.state;
+    const { displayedValue, value, operation, isOperationActive } = this.state;
     const nextValue = parseFloat(displayedValue);
 
     if (!isOperationActive) {
@@ -74,11 +140,12 @@ class Calculator extends React.Component {
         });
       } else if (operation) {
         const prevValue = value;
-        const result = this.mathOperations(
-          operation,
-          prevValue,
-          nextValue
-        );
+        let result = this.mathOperations(operation, prevValue, nextValue);
+
+        result.toLocaleString({
+          useGrouping: true,
+          maximumFractionDigits: 6,
+        });
 
         this.setState({
           value: result,
@@ -93,17 +160,39 @@ class Calculator extends React.Component {
     });
   }
 
+  clearAll() {
+    this.setState({
+      displayedValue: KeypadConstants.NUMBER_ZERO,
+      value: null,
+      operation: null,
+      isOperationActive: false,
+    });
+  }
+
+  clearOutputDisplay() {
+    this.setState({
+      displayedValue: KeypadConstants.NUMBER_ZERO,
+    });
+  }
+
   render() {
     const { displayedValue } = this.state;
     return (
       <div>
         <CalculatorComponent
           displayedValue={displayedValue}
-          inputDigit={(digit) => this.inputDigit(digit)}
-          clearOutputDisplay={() => this.clearOutputDisplay()}
+          handleDigitInput={(digit) => this.handleDigitInput(digit)}
+          handleSignChange={() => this.handleSignChange()}
+          handleNumberPercentage={() => this.handleNumberPercentage()}
+          handleFloatingPointInput={() => this.handleFloatingPointInput()}
+          handleMemoryNumberInput={(memoryOperation) =>
+            this.handleMemoryNumberInput(memoryOperation)
+          }
           executeCalculation={(currentOperation) =>
             this.executeCalculation(currentOperation)
           }
+          clearOutputDisplay={() => this.clearOutputDisplay()}
+          clearAll={() => this.clearAll()}
         />
       </div>
     );
