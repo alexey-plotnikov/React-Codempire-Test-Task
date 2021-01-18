@@ -5,10 +5,14 @@
     align-items: center;
     flex: 1;
     justify-content: flex-end;
+}
+
+.output-display-container__output-text {
     padding-top: 22px;
     padding-right: 15px;
+    padding-left: 15px;
     font-family: "Helvetica Neue OTS";
     color: white;
-    // font-size: 3.2em;
-    font-size: 1em;
+    font-size: 3em;
+    transform-origin: right;
 }

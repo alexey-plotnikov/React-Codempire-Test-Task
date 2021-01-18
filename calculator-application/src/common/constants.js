@@ -30,3 +30,7 @@ export const KeypadConstants = {
   GREY_COLOR: "grey-button",
   ORANGE_COLOR: "orange-button",
 };
+
+export const OutputDisplay = {
+  FONT_SCALE: 1
+}
