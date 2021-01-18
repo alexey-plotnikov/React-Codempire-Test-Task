@@ -50,7 +50,9 @@ class Calculator extends React.Component {
     if (nextValue === KeypadConstants.NUMBER_ZERO) {
       return;
     } else {
-      const result = parseFloat(displayedValue) / 100;
+      let result = parseFloat(displayedValue) / 100;
+
+      result = parseFloat(result.toFixed(7));
 
       this.setState({
         displayedValue: String(result),
@@ -91,22 +93,23 @@ class Calculator extends React.Component {
     const nextValue = parseFloat(displayedValue);
     const prevValue = parseFloat(memoryNumber);
 
-    const result = this.handleMemoryNumberOperations(
+    let result = this.handleMemoryNumberOperations(
       currentMemoryOperation,
       prevValue,
       nextValue
-    )
+    );
+
+    result = parseFloat(result.toFixed(7));
 
     if (currentMemoryOperation === KeypadConstants.MEMORY_NUMBER_RECALL_SIGN) {
       this.setState({
-        displayedValue: String(result)
-      })
+        displayedValue: String(result),
+      });
     }
 
     this.setState({
-      memoryNumber: String(result)
-    })
-
+      memoryNumber: String(result),
+    });
   }
 
   mathOperations(operation, prevValue, nextValue) {
@@ -138,14 +141,10 @@ class Calculator extends React.Component {
         this.setState({
           value: nextValue,
         });
-      } else if (operation) {
+      } else {
         const prevValue = value;
         let result = this.mathOperations(operation, prevValue, nextValue);
-
-        result.toLocaleString({
-          useGrouping: true,
-          maximumFractionDigits: 6,
-        });
+        result = parseFloat(result.toFixed(7));
 
         this.setState({
           value: result,

@@ -38,7 +38,7 @@ const KeypadComponent = (props) => {
         <div className="keypad-container__keypad-row__keypad-column">
           <KeypadButton
             btnLabel={KeypadConstants.PLUS_MINUS_SIGN}
-            btnStyle={KeypadConstants.SIGN_STYLE}
+            btnStyle={KeypadConstants.MEMORY_NUMBER_STYLE}
             btnColor={KeypadConstants.LIGHT_GREY_COLOR}
             onClick={() => handleSignChange(KeypadConstants.PLUS_MINUS_SIGN)}
           />
@@ -47,7 +47,7 @@ const KeypadComponent = (props) => {
           <KeypadButton
             btnLabel={KeypadConstants.PERCENTAGE_SIGN}
             btnColor={KeypadConstants.LIGHT_GREY_COLOR}
-            btnStyle={KeypadConstants.SIGN_STYLE}
+            btnStyle={KeypadConstants.MEMORY_NUMBER_STYLE}
             onClick={() =>
               handleNumberPercentage(KeypadConstants.PERCENTAGE_SIGN)
             }
